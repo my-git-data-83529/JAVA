@@ -38,27 +38,29 @@ public class Invoice {
 		public double getPrice() {
 			return price;
 		}
-		public void setPrice(double price) {
-			this.price = price;
-		}
-		 
-	Double calculateInvoice()
-	{
-		return price*quntity;
 		
-
-	}
-	public void setquntity(int quntity)
-	{
-		if(quntity<0)
+		 
+		public void setPrice(double price) {
+			if(price<0)
+			{price=0;}
+			else
+			{
+			this.price = price;
+			}
+			}
+		
+		public void setQty(int qty)
 		{
-			quntity=0;
+			if(qty<0)
+			{
+				qty=0;
+			}
+			this.quntity=qty;
 		}
-		this.quntity=quntity;
-}
-	double calculateAmount()
-
-{
-		return price*quntity;
+		
+		public double getcalculateAmount()
+		{
+			return quntity*price;
 		}
+		
 }
